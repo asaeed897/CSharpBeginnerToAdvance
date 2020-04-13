@@ -6,19 +6,18 @@ namespace CSharpBeginner
     {
         static void Main(string[] args)
         {
-            const float Pi = 3.14f;
-            byte num = 255;
-            int num2 = 34;
-            char Char = 'S';
-            string name = "Awais";
-            Console.WriteLine(num);
-            Console.WriteLine(num2);
-            Console.WriteLine(Char);
-            Console.WriteLine(name);
-            Console.WriteLine("Range of byte: {0} {1}",byte.MinValue, byte.MaxValue);
-            Console.WriteLine("Range of Int: {0} {1}",int.MinValue,int.MaxValue );
-            Console.WriteLine(Pi);
-            // Variables and Constants
+            byte b = 5;
+            int i = b;   //implict conversion
+            Console.WriteLine("b: {0} i: {1}",b, i);
+
+            int c = 1000;
+            byte j = (byte)c; //explicit conversion
+            Console.WriteLine("c: {0} j: {1}", c, j);
+
+            var number = "1234";
+            int k = Convert.ToInt32(number); //non-compatible types conversion
+            Console.WriteLine("number: {0} k: {1}",number,k);
+            //19 and 20. Type Conversion
         }
     }
 }
