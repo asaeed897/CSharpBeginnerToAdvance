@@ -6,18 +6,13 @@ namespace CSharpBeginner
     {
         static void Main(string[] args)
         {
-            byte b = 5;
-            int i = b;   //implict conversion
-            Console.WriteLine("b: {0} i: {1}",b, i);
-
-            int c = 1000;
-            byte j = (byte)c; //explicit conversion
-            Console.WriteLine("c: {0} j: {1}", c, j);
-
-            var number = "1234";
-            int k = Convert.ToInt32(number); //non-compatible types conversion
-            Console.WriteLine("number: {0} k: {1}",number,k);
-            //19 and 20. Type Conversion
+            int a = 2;
+            int b = 4;
+            int c = 7;
+            Console.WriteLine(a+b);
+            Console.WriteLine(b/a);
+            Console.WriteLine(c>b && b>a);
+            //21,22,23 and 24. Operators and comments
         }
     }
 }
