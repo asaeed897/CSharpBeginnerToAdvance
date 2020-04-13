@@ -6,8 +6,11 @@ namespace CSharpBeginner
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
-            //My First Application
+            byte num = 255;
+            Console.WriteLine("Before " + num);
+            num = (byte)(num + 1);
+            Console.WriteLine("After " + num);
+            //Overflow
         }
     }
 }
