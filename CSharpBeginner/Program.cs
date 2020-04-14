@@ -18,18 +18,23 @@ namespace CSharpBeginner
     {
         static void Main(string[] args)
         {
-            
-            var numbers = new int[3] {1,2,3};
+            var firstName = "Awais";
+            var lastName = "Saeed";
+            var fullName = firstName + " " + lastName; ;
+            Console.WriteLine(fullName);
 
-            Console.WriteLine(numbers[0]);
-            Console.WriteLine(numbers[1]);
-            Console.WriteLine(numbers[2]);
+            var myFullName = string.Format("My name is {0} {1}",firstName,lastName);
+            Console.WriteLine(myFullName);
 
-            var names = new string[3] {"Awais", "Mustansar", "Asim"};
-            Console.WriteLine(names[0]);
-            Console.WriteLine(names[1]);
-            Console.WriteLine(names[2]);
-            // 30 and 31 Arrays 
+            var names = new string[3] {"Asim", "Awais", "Mustensar"};
+            var formattedNames = string.Join(",", names);
+            Console.WriteLine(formattedNames);
+
+            var line = @"Hello,
+ My name is Awais";
+            Console.WriteLine(line);
+
+            // 32 and 33 Strings 
         }
     }
 }
