@@ -8,21 +8,20 @@ namespace CSharpBeginner
     {
         static void Main(string[] args)
         {
-            while (true)
-            {
-                Console.Write("Type your name: ");
-                var input = Console.ReadLine();
-                if (!string.IsNullOrWhiteSpace(input))
-                {
-                    Console.WriteLine("@Echo "+ input);
-                    continue;
-                }
+           var random = new Random();
 
-                break;
-            }
+           const int passwordLength = 10;
+           var buffer = new char[passwordLength];
+           for (int i = 0; i < passwordLength; i++)
+           {
+               buffer[i] = (char) ('a' + (random.Next(0, 26)));
+           }
 
+           var password = new string(buffer);
 
-            // 47 While Loop 
+           Console.WriteLine(password);
+
+           // 48 Random Classes
 
 
         }
