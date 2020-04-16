@@ -8,9 +8,23 @@ namespace CSharpBeginner
     {
         static void Main(string[] args)
         {
+            var name = "Awais Saeed";
 
-            
-            // 44 Iteration statements
+            Console.WriteLine("Using Foor Loop");
+            for (var i = 0; i < name.Length; i++)
+            {
+                Console.WriteLine(name[i]);
+            }
+
+            Console.WriteLine("Using Foreach LOOP");
+
+            foreach (var character in name)
+            {
+                Console.WriteLine(character);
+            }
+
+
+            // 45 and 46 For Loop and foreach Loop
 
 
         }
