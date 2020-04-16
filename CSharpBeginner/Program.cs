@@ -8,41 +8,46 @@ namespace CSharpBeginner
     {
         static void Main(string[] args)
         {
-            //Exercise 1
-            var sum = 0;
-            while (true)
-            {
-                Console.Write("Enter a number (or OK to exit): ");
-                var input = Console.ReadLine();
-                if (input.ToLower() == "ok")
-                {
-                    break;
-                }
+            var numbers = new[] {1, 2, 7, 8, 3, 4, 5};
+            //Length
+            Console.WriteLine("Length of array: "+ numbers.Length);
 
-                sum += Convert.ToInt32(input);
+            //IndexOf
+            Console.WriteLine("Index of 7: "+Array.IndexOf(numbers, 7));
+
+            //Clear()
+            Array.Clear(numbers,2, 2);
+            Console.WriteLine("Effects of Clear");
+            foreach (var VARIABLE in numbers)
+            {
+                Console.WriteLine(VARIABLE);
             }
 
-            Console.WriteLine("Sum: "+sum);
-
-            //Exercise 2
-            Console.Write("Write comma Separated numbers: ");
-            var numberString = Console.ReadLine();
-
-            var numbers = numberString.Split(',');
-            var max = Convert.ToInt32(numbers[0]);
-
-            foreach (var number in numbers)
+            //Copy()
+            var another = new int[4];
+            Array.Copy(numbers, another, 4);
+            Console.WriteLine("Another Array: ");
+            foreach (var VARIABLE in another)
             {
-                var num = Convert.ToInt32(number);
-                if (num > max)
-                {
-                    max = num;
-                }
+                Console.WriteLine(VARIABLE);
+            }
+            
+            //Sort()
+            Array.Sort(numbers);
+            Console.WriteLine("Effects of Sort");
+            foreach (var VARIABLE in numbers)
+            {
+                Console.WriteLine(VARIABLE);
             }
 
-            Console.WriteLine("Max: "+max);
-            // 49 and 50 Exercise & Summary
-
+            //Reverse()
+             Array.Reverse(numbers);
+             Console.WriteLine("Effects of Reverse");
+             foreach (var VARIABLE in numbers)
+             {
+                 Console.WriteLine(VARIABLE);
+             }
+            // 51, 52 and 53 Introduction and Arrays
 
         }
 
