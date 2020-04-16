@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace CSharpBeginner
 {
@@ -8,37 +9,30 @@ namespace CSharpBeginner
     {
         static void Main(string[] args)
         {
-            var numbers = new List<int>() {1, 2, 3, 5, 6};
+            Console.Write("Write your name: ");
+            var name = Console.ReadLine();
 
-            numbers.Add(1);
-            numbers.AddRange(new int[3]{7, 8, 9});
-            foreach (var number in numbers)
+            var nameArray = new char[name.Length];
+            // Alternate method
+            /*for (int i = 0; i < name.Length; i++)
             {
-                Console.WriteLine(number);
+                nameArray[i] = name[i];
             }
 
-            Console.WriteLine();
-            Console.WriteLine("Index of 1 is "+ numbers.IndexOf(1));
-            Console.WriteLine("Index of 1 is "+ numbers.LastIndexOf(1));
-
-            Console.WriteLine("Count: "+numbers.Count);
-
-            for (int i = 0; i < numbers.Count; i++)
-            {
-                if (numbers[i] == 1)
-                {
-                    numbers.Remove(numbers[i]);
-                }
-            }
-
-            foreach (var number in numbers)
-            {
-                Console.WriteLine(number);  
-            }
+            Array.Reverse(nameArray);*/
             
-            numbers.Clear();
-            Console.WriteLine("Count: "+numbers.Count);
-            // 54 and 55 Lists
+            var j = 0;
+            for (int i = name.Length -1 ; i >=0; i--)
+            {
+                nameArray[j] = name[i];
+                j++;
+            }
+
+            foreach (var Character in nameArray)
+            {
+                Console.Write(Character);
+            }
+            // 56 and  57 Exercise and Summary
 
         }
 
