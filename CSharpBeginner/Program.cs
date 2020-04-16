@@ -8,25 +8,32 @@ namespace CSharpBeginner
     {
         static void Main(string[] args)
         {
-            var Date = new DateTime(2020,01,22);
-            Console.WriteLine(Date);
+            //Creating
+            var timeSpan = new TimeSpan(1,2,3);
+            var timeSpan1 = TimeSpan.FromHours(1);
 
-            var now = DateTime.Now;
-            /*Console.WriteLine(now.Day);
-            Console.WriteLine(now.Hour);
-            Console.WriteLine(now.Minute);*/
+            var start = DateTime.Now;
+            var end = start.AddMinutes(2);
+            var duration = end - start; // Here duration id become a timeSpan object
+            Console.WriteLine("Duration: "+ duration);
 
-            now = now.AddDays(1);
-            Console.WriteLine(now.Day);
+            //Properties
+            Console.WriteLine("Minutes: "+ timeSpan.Minutes);
+            Console.WriteLine("TotalMinutes: "+ timeSpan.TotalMinutes);
 
-            Console.WriteLine(now.ToLongDateString());
-            Console.WriteLine(now.ToShortDateString());
-            Console.WriteLine(now.ToLongTimeString());
-            Console.WriteLine(now.ToShortTimeString());
-            Console.WriteLine(now.ToString("dd-MM-yyyy"));
+            //Add
+            Console.WriteLine("Add Example: "+ timeSpan.Add(TimeSpan.FromMinutes(8)));
 
-            // 59 DateTime
+            //Subtract 
+            Console.WriteLine("Subtract: "+ timeSpan.Subtract(TimeSpan.FromMinutes(2)));
 
+            //ToString
+            Console.WriteLine("ToString: "+ timeSpan.ToString());
+
+            //Parse
+            Console.WriteLine("Parse: "+ TimeSpan.Parse("01:05:20"));
+
+            // 60. TimeSpan
         }
 
 
