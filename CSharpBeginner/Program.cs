@@ -8,20 +8,40 @@ namespace CSharpBeginner
     {
         static void Main(string[] args)
         {
-           var random = new Random();
+            //Exercise 1
+            var sum = 0;
+            while (true)
+            {
+                Console.Write("Enter a number (or OK to exit): ");
+                var input = Console.ReadLine();
+                if (input.ToLower() == "ok")
+                {
+                    break;
+                }
 
-           const int passwordLength = 10;
-           var buffer = new char[passwordLength];
-           for (int i = 0; i < passwordLength; i++)
-           {
-               buffer[i] = (char) ('a' + (random.Next(0, 26)));
-           }
+                sum += Convert.ToInt32(input);
+            }
 
-           var password = new string(buffer);
+            Console.WriteLine("Sum: "+sum);
 
-           Console.WriteLine(password);
+            //Exercise 2
+            Console.Write("Write comma Separated numbers: ");
+            var numberString = Console.ReadLine();
 
-           // 48 Random Classes
+            var numbers = numberString.Split(',');
+            var max = Convert.ToInt32(numbers[0]);
+
+            foreach (var number in numbers)
+            {
+                var num = Convert.ToInt32(number);
+                if (num > max)
+                {
+                    max = num;
+                }
+            }
+
+            Console.WriteLine("Max: "+max);
+            // 49 and 50 Exercise & Summary
 
 
         }
