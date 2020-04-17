@@ -14,7 +14,7 @@ namespace CSharpBeginner
 
             foreach (var number in numbers)
                 Console.WriteLine(number);
-            // 82 and 83 Call stack, Locals and Autos Windows
+            // 84. Quiz and Summary CSharp Beginner Course Completed
         }
 
         public static List<int> GetSmallests(List<int> list, int count)
