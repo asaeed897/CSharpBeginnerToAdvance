@@ -14,7 +14,7 @@ namespace CSharpBeginner
 
             foreach (var number in numbers)
                 Console.WriteLine(number);
-            // 81 Defensive Programming
+            // 82 and 83 Call stack, Locals and Autos Windows
         }
 
         public static List<int> GetSmallests(List<int> list, int count)
