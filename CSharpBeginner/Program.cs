@@ -11,27 +11,29 @@ namespace CSharpBeginner
     {
         static void Main(string[] args)
         {
-            var path = @"c:\myfolder\document.txt";
-            var path1 = @"d:\myfolder\document.txt";
-            //File Class
-            File.Copy(path,path1,true);
-            File.Delete(path);
-            if (File.Exists(path))
+            var path = @"C:\Users\awais\Downloads\Video";
+
+            Directory.CreateDirectory(@"c:\folder");
+            var files = Directory.GetFiles(path, "*.*", SearchOption.AllDirectories);
+            /*foreach (var file in files)
             {
-                var content = File.ReadAllLines(path);
+                Console.WriteLine(file);
+            }*/
+
+            var directories = Directory.GetDirectories(path, "*.*", SearchOption.AllDirectories);
+            foreach (var directory in directories)
+            {
+                Console.WriteLine(directory);
             }
 
-            //FileInfo Class
-            var fileInfo = new FileInfo(path);
-            fileInfo.CopyTo(path1);
-            if (fileInfo.Exists)
-            {
-                var streamReader = fileInfo.OpenText();
-                var firstLine = streamReader.ReadLine();
-            }
-            fileInfo.Delete();
+            Directory.Exists(path);
 
-            // 71, 72 and 73. Introduction and File and FileInfo
+            var directoryInfo = new DirectoryInfo(path);
+            directoryInfo.GetFiles();
+            directoryInfo.GetDirectories();
+
+
+            // 74. Directory and DirectoryInfo
         }
 
     }
