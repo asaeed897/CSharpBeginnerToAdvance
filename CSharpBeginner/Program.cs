@@ -10,20 +10,26 @@ namespace CSharpBeginner
     {
         static void Main(string[] args)
         {
-            var builder  = new StringBuilder();
+            Console.Write("Enter a word: ");
+            var input = Console.ReadLine();
 
-            builder
-                .Append('+', 10)
-                .AppendLine()
-                .Append("Awais Saeed")
-                .AppendLine()
-                .Append('+', 10)
-                .Replace('+', '-')
-                .Remove(0,10)
-                .Insert(0, new string("Name: "));
-            Console.WriteLine(builder);
-            Console.WriteLine("First Char: "+builder[0]);
-            // 66 and 67. StringBuilder
+            Console.WriteLine("Total Vowels in {0}: {1}",input, CountVowels(input));
+            // 68 and 69. Procedural Programming Exercise & Summary
+        }
+
+        static int CountVowels(String input)
+        {
+            var vowels = new List<char>() { 'a', 'e', 'i', 'o', 'u' };
+            var vowelsCount = 0;
+            foreach (var character in input.ToLower())
+            {
+                if (vowels.Contains(character))
+                {
+                    vowelsCount++;
+                }
+            }
+
+            return vowelsCount;
         }
 
 
