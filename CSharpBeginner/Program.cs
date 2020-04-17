@@ -9,16 +9,24 @@ namespace CSharpBeginner
     {
         public static void Main(string[] args)
         {
-            var numbers = new List<int> { 1, 2, 3, 4, 5, 6 };
+            var numbers = new List<int> { 1, 2 };
             var smallests = GetSmallests(numbers, 3);
 
             foreach (var number in numbers)
                 Console.WriteLine(number);
-            // 80 Removing Side Effects
+            // 81 Defensive Programming
         }
 
         public static List<int> GetSmallests(List<int> list, int count)
         {
+            if (list == null)
+            {
+                throw new ArgumentNullException("list");
+            }
+            if (list.Count < count || count <= 0)
+            {
+                throw new ArgumentOutOfRangeException("Count", "Count should be between 1 and the number of elements in the list.");
+            }
             var smallests = new List<int>();
             var buffer = new List<int>(list);
             while (smallests.Count < count)
