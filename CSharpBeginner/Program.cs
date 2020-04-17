@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Text;
 
 
@@ -10,29 +11,28 @@ namespace CSharpBeginner
     {
         static void Main(string[] args)
         {
-            Console.Write("Enter a word: ");
-            var input = Console.ReadLine();
-
-            Console.WriteLine("Total Vowels in {0}: {1}",input, CountVowels(input));
-            // 68 and 69. Procedural Programming Exercise & Summary
-        }
-
-        static int CountVowels(String input)
-        {
-            var vowels = new List<char>() { 'a', 'e', 'i', 'o', 'u' };
-            var vowelsCount = 0;
-            foreach (var character in input.ToLower())
+            var path = @"c:\myfolder\document.txt";
+            var path1 = @"d:\myfolder\document.txt";
+            //File Class
+            File.Copy(path,path1,true);
+            File.Delete(path);
+            if (File.Exists(path))
             {
-                if (vowels.Contains(character))
-                {
-                    vowelsCount++;
-                }
+                var content = File.ReadAllLines(path);
             }
 
-            return vowelsCount;
+            //FileInfo Class
+            var fileInfo = new FileInfo(path);
+            fileInfo.CopyTo(path1);
+            if (fileInfo.Exists)
+            {
+                var streamReader = fileInfo.OpenText();
+                var firstLine = streamReader.ReadLine();
+            }
+            fileInfo.Delete();
+
+            // 71, 72 and 73. Introduction and File and FileInfo
         }
-
-
 
     }
 } 
