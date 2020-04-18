@@ -1,32 +1,21 @@
 ﻿using System;
+using System.Net.Security;
 
 namespace CSharpIntermediate
 {
-    public class Person
-    {
-        public string Name;
-
-        public void Introduce(string toName)
-        {
-            Console.WriteLine("Hi {0}, I am {1}",toName,Name);
-        }
-
-        public static Person Parse(string str)
-        {
-            return new Person() {Name = str};
-        }
-    }
     class Program
     {
         static void Main(string[] args)
         {
-            //var person = new Person();
-           // person.Name = "Awais";
-            //person.Introduce("Asim");
+            var customer = new Customer();
+            var customer1 = new Customer(1);
+            var customaer2 = new Customer(2, "Awais");
 
-            var person = Person.Parse("Awais");
-            person.Introduce("Asim");
-            // 7 Introduction to Classes
+            var order =new Order();
+            customaer2.Orders.Add(order);
+
+            Console.WriteLine("ID: {0}  Name{1}",customaer2.Id,customaer2.Name);
+            // 8 Constructors
         }
     }
 }
