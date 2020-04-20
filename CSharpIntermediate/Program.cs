@@ -1,19 +1,17 @@
-﻿namespace CSharpIntermediate
+﻿using System.Data;
+
+namespace CSharpIntermediate
 {
     class Program
     {
 
         static void Main(string[] args)
         {
-            var dbMigrator = new DbMigrator(new Logger());
+            /*Inheritance IS-A Relationship
+             Composition Has-A Relationship*/
 
-            var logger = new Logger();
-            var installer = new Installer(logger);
 
-            dbMigrator.Migrate();
-
-            installer.Install();
-            // 19 Composition
+            // 20 Class Favor Composition Over Inheritance
         }
     }
 }
