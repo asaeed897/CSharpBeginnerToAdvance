@@ -2,13 +2,18 @@
 {
     class Program
     {
+
         static void Main(string[] args)
         {
-            var text = new Text {Width = 100};
-            text.Copy();
+            var dbMigrator = new DbMigrator(new Logger());
 
-            // 18 Inheritance
+            var logger = new Logger();
+            var installer = new Installer(logger);
 
+            dbMigrator.Migrate();
+
+            installer.Install();
+            // 19 Composition
         }
     }
 }
