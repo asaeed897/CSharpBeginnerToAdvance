@@ -1,14 +1,13 @@
-﻿using System;
-
-namespace CSharpIntermediate
+﻿namespace CSharpIntermediate
 {
     class Program
     {
-
         static void Main(string[] args)
         {
-            
-            // 17 Class Coupling
+            var text = new Text {Width = 100};
+            text.Copy();
+
+            // 18 Inheritance
 
         }
     }
