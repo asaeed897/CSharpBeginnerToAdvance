@@ -7,9 +7,11 @@ namespace CSharpIntermediate
 
         static void Main(string[] args)
         {
-            var cookie = new HttpCookie {["name"] = "Awais"};
-            Console.WriteLine(cookie["name"]);
-            // 14 Indexers
+            Stopwatch.Start();
+            Stopwatch.End();
+            Console.WriteLine(Stopwatch.Duration);
+            Stopwatch.Start();
+            // 15 & 16 Summary & Exercise
 
         }
     }
