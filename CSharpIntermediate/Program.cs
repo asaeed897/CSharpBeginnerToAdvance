@@ -4,16 +4,13 @@ namespace CSharpIntermediate
 {
     class Program
     {
-        
+
         static void Main(string[] args)
         {
-           var person = new Person(new DateTime(1997, 01, 22));
-           person.Name = "Awais";
-           Console.WriteLine(person.Age);
+            var cookie = new HttpCookie {["name"] = "Awais"};
+            Console.WriteLine(cookie["name"]);
+            // 14 Indexers
 
-            // 13 Properties
         }
-
-        
     }
 }
