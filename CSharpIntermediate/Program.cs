@@ -1,6 +1,4 @@
-﻿
-
-using System;
+﻿using System;
 using System.Collections;
 
 namespace CSharpIntermediate
@@ -10,19 +8,20 @@ namespace CSharpIntermediate
 
         static void Main(string[] args)
         {
-            var number = 10;
-            var obj = (Object) number; // boxing: converting value type to reference type
-            var num = (int) obj; // unboxing: converting reference type to value type
+            var stack = new Stack();
+            stack.Push(1);
+            stack.Push(2);
+            stack.Push(3);
 
-            Console.WriteLine(num);
+            Console.WriteLine("Count: {0}",stack.Size());
+            Console.WriteLine(stack.Pop());
+            Console.WriteLine("Count: {0}",stack.Size());
+            Console.WriteLine(stack.Pop());
+            Console.WriteLine("Count: {0}",stack.Size());
+            Console.WriteLine(stack.Pop());
+            Console.WriteLine("Count: {0}",stack.Size());
 
-            var list = new ArrayList(); 
-            list.Add(1); //here when we add something to it that will cast to a reference type
-            list.Add("Mosh");
-            list.Add(DateTime.Today);
-
-
-            // 25 Boxing and Unboxing
+            // 26 and 27 Summary and Exercise
         }
     }
 }
