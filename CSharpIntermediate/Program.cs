@@ -52,6 +52,9 @@ namespace CSharpIntermediate
 
         static void Main(string[] args)
         {
+            // We can't drive a class from a sealed class
+            // for making a class as a sealed class we just add modifier sealed at place of abstract
+            // we can also sealed a method but that method should be override
             var shapes = new List<Shape>();
             shapes.Add(new Circle());
             shapes.Add(new Rectangle());
@@ -60,7 +63,7 @@ namespace CSharpIntermediate
             var canvas = new Canvas();
             canvas.DrawShapes(shapes);
 
-            // 29 Abstract CLasses and Members
+            // 30 Sealed CLasses and Members
         }
     }
 }
