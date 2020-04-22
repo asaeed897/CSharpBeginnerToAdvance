@@ -4,15 +4,13 @@ using System.Collections.Generic;
 
 namespace CSharpIntermediate
 {
-    public class Shape
+    public abstract class Shape
     {
         public int Width { get; set; }
         public int Height { get; set; }
 
-        public virtual void Draw()
-        {
-            //
-        }
+        public abstract void Draw();
+
     }
 
     public class Circle : Shape
@@ -62,7 +60,7 @@ namespace CSharpIntermediate
             var canvas = new Canvas();
             canvas.DrawShapes(shapes);
 
-            // 28 Method Overriding
+            // 29 Abstract CLasses and Members
         }
     }
 }
