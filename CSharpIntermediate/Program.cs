@@ -1,15 +1,15 @@
-﻿using System;
-
-namespace CSharpIntermediate
+﻿namespace CSharpIntermediate
 {
     class Program
     {
         static void Main(string[] args)
         {
-            var orderProcessor = new OrderProcessor(new ShippingCalculator());
-            var order = new Order {DatePlaced = DateTime.Now, TotalPrice = 100f};
-            orderProcessor.Process(order);
-            // 34 Interface and Testability
+            var dbMigrator = new DbMigrator(new ConsoleLogger());
+            dbMigrator.Migrator();
+
+            var dbMigrator1 = new DbMigrator(new FileLogger(@"C:\Users\awais\Downloads\Video\CSharp Intermediate\Section 6 Interfaces\Log.txt"));
+            dbMigrator1.Migrator();
+            // 35 Interface and Extensibility
         }
     }
 }
