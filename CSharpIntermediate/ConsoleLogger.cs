@@ -2,7 +2,7 @@
 
 namespace CSharpIntermediate
 {
-    public class ConsoleLogger : ILogger
+    public class ConsoleLogger : ILogger // Here This class can implement multiple interfaces but can't inherited from multiple classes
     {
         public void LogError(string message)
         {

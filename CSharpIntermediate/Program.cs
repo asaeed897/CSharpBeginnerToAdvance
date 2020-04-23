@@ -9,7 +9,9 @@
 
             var dbMigrator1 = new DbMigrator(new FileLogger(@"C:\Users\awais\Downloads\Video\CSharp Intermediate\Section 6 Interfaces\Log.txt"));
             dbMigrator1.Migrator();
-            // 35 Interface and Extensibility
+            // check interface.... 
+
+            // 36 Interface are Not for Multiple Inheritance
         }
     }
 }
