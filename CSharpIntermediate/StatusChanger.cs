@@ -2,12 +2,11 @@
 
 namespace CSharpIntermediate
 {
-    public class MailService : IWorkflow
+    public class StatusChanger : IWorkflow
     {
         public void Execute()
         {
-            Console.WriteLine("Sending an email... ");
-            ;
+            Console.WriteLine("Video is in processing state");
         }
     }
 }

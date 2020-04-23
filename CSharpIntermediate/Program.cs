@@ -3,14 +3,17 @@
 namespace CSharpIntermediate
 {
     class Program
-    {
+    { 
         static void Main(string[] args)
         {
-            var encoder = new VideoEncoder();
-            encoder.RegistrationNotificationChannel(new MailNotificationChannel());
-            encoder.RegistrationNotificationChannel(new SmsNotificationChannel());
-            encoder.Encode(new Video());
-            // 37 Interfaces and Polymorphism 
+            var workflow = new Workflow();
+            workflow.AddActivity(new Upload());
+            workflow.AddActivity(new VideoEncoder());
+            workflow.AddActivity(new MailService());
+            workflow.AddActivity(new StatusChanger());
+            var workflowEngine = new WorkflowEngine();
+            workflowEngine.Run(workflow);
+            // 38 and 39  Summary and Exercise 
         }
     }
 }
