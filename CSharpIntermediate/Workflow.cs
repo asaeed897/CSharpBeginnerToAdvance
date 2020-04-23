@@ -2,23 +2,27 @@
 
 namespace CSharpIntermediate
 {
-    public class Workflow
+    public class Workflow : IWorkflow
     {
-        private readonly IList<IWorkflow> _workflow;
+        private readonly IList<ITask> _tasks;
 
         public Workflow()
         {
-            _workflow = new List<IWorkflow>();
+            _tasks = new List<ITask>();
         }
 
-        public void AddActivity(IWorkflow activity)
+        public void AddActivity(ITask activity)
         {
-            _workflow.Add(activity);
+            _tasks.Add(activity);
+        }
+        public void RemoveActivity(ITask activity)
+        {
+            _tasks.Remove(activity);
         }
 
-        public IList<IWorkflow> GetActivities()
+        public IEnumerable<ITask> GetActivities()
         {
-            return _workflow;
+            return _tasks;
         }
     }
 }

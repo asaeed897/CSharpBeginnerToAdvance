@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace CSharpIntermediate
 {
-    public class VideoEncoder : IWorkflow
+    public class VideoEncoder : ITask
     {
         public void Execute()
         {

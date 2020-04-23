@@ -1,7 +1,9 @@
-﻿namespace CSharpIntermediate
+﻿using System.Collections.Generic;
+
+namespace CSharpIntermediate
 {
     public interface IWorkflow
     {
-        void Execute();
+        public IEnumerable<ITask> GetActivities();
     }
 }

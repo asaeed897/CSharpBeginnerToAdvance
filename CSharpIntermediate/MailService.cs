@@ -2,7 +2,7 @@
 
 namespace CSharpIntermediate
 {
-    public class MailService : IWorkflow
+    public class MailService : ITask
     {
         public void Execute()
         {

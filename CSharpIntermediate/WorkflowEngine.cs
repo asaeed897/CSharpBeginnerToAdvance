@@ -4,20 +4,26 @@ namespace CSharpIntermediate
 {
     public class WorkflowEngine
     {
-        public void Run(Workflow _workflow)
+        public void Run(IWorkflow workflow)
         {
-            if (_workflow == null)
+            if (workflow == null)
             {
                 throw new ArgumentNullException("_workflow");
             }
-            else if (_workflow.GetActivities().Count == 0)
+
+            foreach (var activity in workflow.GetActivities())
             {
-                throw new ArgumentNullException("ActivityList","Empty Activity list not allowed");
-            }
-            
-            foreach (var activity in _workflow.GetActivities())
-            {
-                activity.Execute();
+                try
+                {
+                    activity.Execute();
+                }
+                catch (Exception e)
+                {
+                    //Logging 
+                    //Terminate and persist the state
+                    Console.WriteLine(e);
+                    throw;
+                }
             }
         }
     }

@@ -2,7 +2,7 @@
 
 namespace CSharpIntermediate
 {
-    public class Upload : IWorkflow
+    public class Upload : ITask
     {
         public void Execute()
         {

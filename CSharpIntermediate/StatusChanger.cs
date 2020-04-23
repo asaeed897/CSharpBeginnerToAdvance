@@ -2,7 +2,7 @@
 
 namespace CSharpIntermediate
 {
-    public class StatusChanger : IWorkflow
+    public class StatusChanger : ITask
     {
         public void Execute()
         {
