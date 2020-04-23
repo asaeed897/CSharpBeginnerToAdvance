@@ -1,15 +1,15 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System;
 
 namespace CSharpIntermediate
 {
     class Program
     {
-
         static void Main(string[] args)
         {
-            //Started Section 6 Interfaces
-            // 33 What is an Interface
+            var orderProcessor = new OrderProcessor(new ShippingCalculator());
+            var order = new Order {DatePlaced = DateTime.Now, TotalPrice = 100f};
+            orderProcessor.Process(order);
+            // 34 Interface and Testability
         }
     }
 }
