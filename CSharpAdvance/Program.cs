@@ -6,7 +6,8 @@ namespace CSharpAdvance
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Started CSharp Advance Course...");
+            Console.WriteLine("Section I...");
+            // Quiz 1 and Section 1
         }
     }
 }
