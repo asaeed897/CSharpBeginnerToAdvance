@@ -1,8 +1,7 @@
 ﻿namespace CSharpAdvance
 {
-    public class Book
+    public class Video
     {
         public string Title { get; set; }
-        public float Price { get; set; }
     }
 }
