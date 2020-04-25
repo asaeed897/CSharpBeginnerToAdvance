@@ -2,30 +2,27 @@
 
 namespace CSharpAdvance
 {
-    // where T : IComparable
-    // where T : Product
-    // Where T : Struct
-    // Where T : Class
-    // Where T : new
+    // Generic Delegates  Action return void
+    //System.Action<>  Func return TReturn
+    //System.Func<>
     class Program
     {
+        
         static void Main(string[] args)
         {
-            var book = new Book{Isbn = "1111", Title = "C# Advance"};
+            var photoProcessor = new PhotoProcessor();
+            var filters = new PhotoFilters();
+            // PhotoProcessor.PhotoFilterHandler filterHandler  = filters.ApplyContrast;
+            Action<Photo> filterHandler  = filters.ApplyContrast;
+            filterHandler += filters.ApplyBrightness;
+            filterHandler += RemoveRedEyeFilter;
+            photoProcessor.Process("image.jpg", filterHandler);
+            // 7. Delegates
+        }
 
-            var numbers = new GenericList<int>();
-            numbers.Add(10);
-
-            var books = new GenericList<Book>();
-            books.Add(book);
-
-            var dictionary = new GenericDictionary<string, Book>();
-            dictionary.Add("1234", new Book());
-
-            var number = new Nullable<int>();
-            Console.WriteLine("Has Value ?" + number.HasValue);
-            Console.WriteLine("Value: "+ number.GetValueOrDefault());
-            // 6. Generics and constraints
+        static void RemoveRedEyeFilter(Photo photo)
+        {
+            Console.WriteLine("Apply RemoveRedEye");
         }
     }
 }
