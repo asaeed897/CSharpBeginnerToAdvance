@@ -8,52 +8,15 @@ namespace CSharpAdvance
     {
         static void Main(string[] args)
         {
-            var books = new BookRepository().GetBooks();
+            DateTime? date = null; // We convert value types to nullable type where we need them
 
-            /*var cheapBooks = new List<Book>();
-            foreach (var book in books)
-            {
-                if (book.Price < 10)
-                    cheapBooks.Add(book);
+            DateTime date2 = date ?? DateTime.Today;
 
-            }*/
-            
-            // LINQ Query Operations
-            var cheapBooks1 = from b in books
-                where b.Price < 10
-                orderby b.Title
-                select b;
+            DateTime date3 = (date != null) ? date.GetValueOrDefault() : DateTime.Today;
 
-                 // LINQ Extension Methods
-            var cheapBooks = books
-                .Where(b => b.Price <= 10)
-                .OrderBy(b => b.Title)
-                .Select(b => b);
-            foreach(var book in cheapBooks)
-                Console.WriteLine(book.Title + " " + book.Price);
+            Console.WriteLine(date2);
 
-            // Other useful methods: We can use them to Query Objects, Databases, XML and ADO.NET Data sets
-
-            /*books.Where();
-            books.Single();
-            books.SingleOrDefault();
-
-            books.First();
-            books.FirstOrDefault();
-
-            books.Last();
-            books.LastOrDefault();
-
-            books.Min();
-            books.Max();
-            books.Count();
-            books.Sum();
-            books.Average();
-
-            books.Skip().Take(3);*/
-
-
-            // 11. Linq
+            // 12. Nullable Types
         }
 
     }
