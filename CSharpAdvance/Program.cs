@@ -1,22 +1,27 @@
-﻿namespace CSharpAdvance
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace CSharpAdvance
 {
     class Program
     {
         static void Main(string[] args)
         {
-            var video = new Video(){Title = "video 1"};
-            var videoEncoder = new VideoEncoder(); //publisher
-            var mailService = new MailService(); //subscriber
-            var messageService = new MessageService(); //subscriber
+            string post = "This is supposed to be very long post blah blah blah...";
+            var shortenedPost = post.Shorten(5);
 
+            Console.WriteLine(shortenedPost);
 
-            videoEncoder.VideoEncoded += mailService.OnVideoEncoded;
-            videoEncoder.VideoEncoded += messageService.OnVideoEncoded;
+            // Most of the time we use Extension method instead of creating them
+            // For Example
+            
+            IEnumerable<int> numbers = new List<int>() {1, 4, 88, 12, 30};
+            var max = numbers.Max();
 
-            videoEncoder.Encode(video);
-            // 9. Events and Delegates
+            Console.WriteLine(max);
+            // 10. Extension Methods
         }
 
-       
     }
 }
