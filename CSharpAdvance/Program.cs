@@ -8,15 +8,18 @@ namespace CSharpAdvance
     {
         static void Main(string[] args)
         {
-            DateTime? date = null; // We convert value types to nullable type where we need them
+            object obj = "Mosh";
 
-            DateTime date2 = date ?? DateTime.Today;
+            //Reflection is just like below and when we don't have dynamic we use this
+            //var methodInfo = obj.GetType().GetMethod("GetHashCode");
+           // methodInfo.Invoke(null,null);
 
-            DateTime date3 = (date != null) ? date.GetValueOrDefault() : DateTime.Today;
+            dynamic name = obj;
+            name = 10;
 
-            Console.WriteLine(date2);
+            Console.WriteLine(name);
 
-            // 12. Nullable Types
+            // 13. Dynamic
         }
 
     }
